@@ -9,6 +9,7 @@ abstract_target 'NIMDemo' do
     pod 'TZImagePickerController', '~> 3.2.1'
     pod 'YYImage'
     pod 'YYImage/WebP'
+    pod 'AFNetworking'
 
 
     target 'NIM' do
