@@ -1,4 +1,6 @@
-platform :ios, '8.0'
+source 'http://gitlab.meishubao.com/ArtPods/ArtPodRepo.git'
+
+platform :ios, '9.0'
 workspace 'NIM.xcworkspace'
 
 abstract_target 'NIMDemo' do
@@ -10,8 +12,10 @@ abstract_target 'NIMDemo' do
     pod 'YYImage'
     pod 'YYImage/WebP'
     pod 'AFNetworking'
-
-
+    pod 'Masonry', '~> 1.0.2'
+    pod 'ReactiveCocoa', '~> 2.5.2'
+    pod 'ArtLoginAndRegister', '0.0.3.3'
+    
     target 'NIM' do
         project 'NIM.xcodeproj'
         pod 'FMDB', '~> 2.7.2'
@@ -19,8 +23,8 @@ abstract_target 'NIMDemo' do
         pod 'CocoaLumberjack', '~> 3.2.1'
         pod 'SSZipArchive', '~> 1.8.1'
         pod 'SVProgressHUD', '~> 2.1.2'
-        pod 'Fabric'
-        pod 'Crashlytics'
+        pod 'Fabric', '~> 1.7.2'
+        pod 'Crashlytics', '~> 3.9.3'
     end
     
     target 'NIMKit' do

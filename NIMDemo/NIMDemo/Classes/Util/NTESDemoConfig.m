@@ -7,6 +7,7 @@
 //
 
 #import "NTESDemoConfig.h"
+#import "MSBContant.h"
 
 @interface NTESDemoConfig ()
 
@@ -27,8 +28,8 @@
 {
     if (self = [super init])
     {
-        _appKey = @"45c6af3c98409b18a84451215d0bdd6e";
-        _apiURL = @"https://app.netease.im/api";
+        _appKey = MSBAPPKEY;
+        _apiURL = MSBAPIURL;
 #ifdef DEBUG
         _apnsCername = @"DEVELOPER";
 #else
