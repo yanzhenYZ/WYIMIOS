@@ -19,12 +19,12 @@ abstract_target 'NIMDemo' do
     pod 'AFNetworking'
     pod 'Masonry', '~> 1.0.2'
     pod 'ReactiveCocoa', '~> 2.5.2'
-    pod 'YYText', '~> 1.0.7'
-    
-    pod 'ArtLoginAndRegister', '0.0.3.3'
-    pod 'ArtFoundation' , '0.0.9.1'
-    pod 'ArtCommon', '1.0.13.11'
-    pod 'ArtLogger', '0.3.4.8'
+#    pod 'YYText', '~> 1.0.7'
+#    
+#    pod 'ArtLoginAndRegister', '0.0.3.3'
+#    pod 'ArtFoundation' , '0.0.9.1'
+#    pod 'ArtCommon', '1.0.13.11'
+#    pod 'ArtLogger', '0.3.4.8'
 
 
     target 'NIM' do

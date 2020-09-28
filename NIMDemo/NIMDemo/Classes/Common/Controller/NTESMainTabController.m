@@ -23,12 +23,12 @@
 #define TabbarImage @"image"
 #define TabbarSelectedImage @"selectedImage"
 #define TabbarItemBadgeValue @"badgeValue"
-#define TabBarCount 4
+#define TabBarCount 3
 
 typedef NS_ENUM(NSInteger,NTESMainTabType) {
     NTESMainTabTypeMessageList,    //聊天
     NTESMainTabTypeContact,        //通讯录
-    NTESMainTabTypeChatroomList,   //聊天室
+//    NTESMainTabTypeChatroomList,   //聊天室
     NTESMainTabTypeSetting,        //设置
 };
 
@@ -254,12 +254,12 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
                              TabbarSelectedImage: @"icon_contact_pressed",
                              TabbarItemBadgeValue: @(self.systemUnreadCount)
                              },
-                     @(NTESMainTabTypeChatroomList): @{
-                             TabbarVC           : @"NTESChatroomListViewController",
-                             TabbarTitle        : @"直播间".ntes_localized,
-                             TabbarImage        : @"icon_chatroom_normal",
-                             TabbarSelectedImage: @"icon_chatroom_pressed",
-                             },
+//                     @(NTESMainTabTypeChatroomList): @{
+//                             TabbarVC           : @"NTESChatroomListViewController",
+//                             TabbarTitle        : @"直播间".ntes_localized,
+//                             TabbarImage        : @"icon_chatroom_normal",
+//                             TabbarSelectedImage: @"icon_chatroom_pressed",
+//                             },
                      @(NTESMainTabTypeSetting)     : @{
                              TabbarVC           : @"NTESSettingViewController",
                              TabbarTitle        : @"设置".ntes_localized,
