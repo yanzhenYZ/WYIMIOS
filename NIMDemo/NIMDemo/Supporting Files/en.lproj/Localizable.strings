@@ -246,7 +246,7 @@
 "聊天记录" = "Chat record";
 //NTESRedPacketManager
 "不在群中，无法发送红包" = "Not in the group and cannot send red packet";
-"云信红包" = "Yunxin red packet";
+"美术宝红包" = "Meishubao red packet";
 //NTESSessionMsgConverter
 "图片发送于" = "Picture is sent from";
 "发来了一张图片" = "Sent a picture";
@@ -327,7 +327,7 @@
 "保存图片成功" = "Picture saved successfully";
 "下载图片失败" = "Download image failed";
 "已开启" = "Turned on";
-"云信 Demo" = "Yunxin Demo";
+"美术宝 Demo" = "Meishubao Demo";
 "图片和视频" = "Pictures and videos";
 "本周" = "This week";
 "年" = "Year";
@@ -478,8 +478,8 @@
 "发送已读回执消息" = "Send read receipt message";
 "请输入内容" = "Please enter content";
 "已发送" = "Has been sent";
-"正在使用云信" = "Using yunxin";
-"正在使用云信未知版本" = "Using unknown yunxin version";
+"正在使用美术宝" = "Using Meishubao";
+"正在使用美术宝未知版本" = "Using unknown Meishubao version";
 "当前网络不可用，请检查网络设置" = "Current network unvailable, please check network settings";
 "登录失败" = "Login failed";
 "网络正在切换,识别中...." = "The network is switching, identifying";
@@ -487,7 +487,7 @@
 "多端登录管理" = "Multi-terminal login management";
 "踢出失败" = "kickout failed";
 "已没有其他设备连接" = "No other devices are connected";
-"云信" = "Yunxin";
+"美术宝" = "Meishubao";
 "还没有会话，在通讯录中找个人聊聊吧" = "No conversation, find someone in your address book";
 "标记所有消息为已读" = "Mark all messages";
 "清理所有消息" = "Clean up all messages";
@@ -554,7 +554,7 @@
 "免打扰" = "No disturbing";
 "从" = "From";
 "至" = "To";
-"在设定的时间段内云信消息将不再提醒。" = "Yunxin messages will no longer be reminded within the setted period";
+"在设定的时间段内美术宝消息将不再提醒。" = "Meishubao messages will no longer be reminded within the setted period";
 "结束时间不能与开始时间一致" = "End time cannot be same as start time";
 "免打扰设置更新失败" = "No disturbing set update failed";
 "关于" = "About";
@@ -564,7 +564,7 @@
 "我的收藏" = "My collection";
 "我的钱包" = "My wallet";
 "消息提醒" = "Message notification";
-"在iPhone的“设置- 通知中心”功能，找到应用程序“云信”，可以更改云信新消息提醒设置" = "In the Settings →Notification Center of iPhone, find the ”Yunxin“ application , you can change the new message remind settings of Yunxin";
+"在iPhone的“设置- 通知中心”功能，找到应用程序“美术宝”，可以更改美术宝新消息提醒设置" = "In the Settings →Notification Center of iPhone, find the ”Meishubao“ application , you can change the new message remind settings of Meishubao";
 "通知显示详情" = "Notification shows details";
 "免打扰" = "No disturbing";
 "到" = "To";
@@ -594,7 +594,7 @@
 "月" = "Month";
 "日" = "Day";
 "帐号" = "Account";
-"云信" = "Yunxin";
+"美术宝" = "Meishubao";
 "通讯录" = "Address book";
 "直播间" = "Live room";
 "设置" = "Set";

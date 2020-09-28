@@ -186,7 +186,7 @@
             {
                 NIMRedPacketTokenRequest *request = [[NIMRedPacketTokenRequest alloc] init];
                 request.type = NIMRedPacketServiceTypeJRMF;
-                NSString *envelopeName = @"云信红包".ntes_localized;
+                NSString *envelopeName = @"美术宝红包".ntes_localized;
                 BOOL isOnLine = [NTESDemoConfig sharedConfig].redPacketConfig.useOnlineEnv;
                 NSString *aliPaySchemeUrl = [NTESDemoConfig sharedConfig].redPacketConfig.aliPaySchemeUrl;
                 NSString *weChatSchemeUrl = [NTESDemoConfig sharedConfig].redPacketConfig.weChatSchemeUrl;

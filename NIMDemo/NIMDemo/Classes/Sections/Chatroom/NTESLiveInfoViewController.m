@@ -47,7 +47,7 @@
     [self.view addSubview:self.liveBroadcastView];
     [self refresh];
     //当主播没有上传特别个人信息时，需要从IM信息里读取，这个时候需要监听IM信息变化。
-    //由于Demo将个人信息托管至云信，只需要监听此回调即可。
+    //由于Demo将个人信息托管至美术宝，只需要监听此回调即可。
     [[NIMSDK sharedSDK].userManager addDelegate:self];    
 }
 

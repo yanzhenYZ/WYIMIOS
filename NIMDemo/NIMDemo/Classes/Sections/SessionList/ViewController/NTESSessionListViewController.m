@@ -21,7 +21,7 @@
 #import "NSString+NTES.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#define SessionListTitle @"云信 Demo".ntes_localized
+#define SessionListTitle @"美术宝 Demo".ntes_localized
 
 @interface NTESSessionListViewController ()<NIMLoginManagerDelegate,NTESListHeaderDelegate,NIMEventSubscribeManagerDelegate,UIViewControllerPreviewingDelegate,NIMChatExtendManagerDelegate>
 

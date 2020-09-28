@@ -242,7 +242,7 @@ typedef NS_ENUM(NSInteger,NTESMainTabType) {
         _configs = @{
                      @(NTESMainTabTypeMessageList) : @{
                              TabbarVC           : @"NTESSessionListViewController",
-                             TabbarTitle        : @"云信".ntes_localized,
+                             TabbarTitle        : @"美术宝".ntes_localized,
                              TabbarImage        : @"icon_message_normal",
                              TabbarSelectedImage: @"icon_message_pressed",
                              TabbarItemBadgeValue: @(self.sessionUnreadCount)

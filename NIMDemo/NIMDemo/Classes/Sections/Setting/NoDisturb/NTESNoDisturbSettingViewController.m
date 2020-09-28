@@ -76,7 +76,7 @@
                                       Disable    :@(!enableNoDisturbing),
                                       },
                                   ],
-                          FooterTitle:@"在设定的时间段内云信消息将不再提醒。".ntes_localized
+                          FooterTitle:@"在设定的时间段内美术宝消息将不再提醒。".ntes_localized
                           },
                       ];
     self.data = [NIMCommonTableSection sectionsWithData:data];

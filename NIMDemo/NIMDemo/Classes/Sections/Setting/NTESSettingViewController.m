@@ -139,7 +139,7 @@
                                               DetailTitle:disableRemoteNotification ? @"未开启".ntes_localized : @"已开启".ntes_localized,
                                             },
                                         ],
-                          FooterTitle:@"在iPhone的“设置- 通知中心”功能，找到应用程序“云信”，可以更改云信新消息提醒设置".ntes_localized
+                          FooterTitle:@"在iPhone的“设置- 通知中心”功能，找到应用程序“美术宝”，可以更改美术宝新消息提醒设置".ntes_localized
                         },
                         @{
                           HeaderTitle:@"",

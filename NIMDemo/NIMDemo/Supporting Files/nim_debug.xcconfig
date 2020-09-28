@@ -7,5 +7,5 @@
 //
 
 XCCONFIG_BUNDLE_ID                  = com.netease.NIM.demo
-XCCONFIG_BUNDLE_NAME                = 网易云信开发版
+XCCONFIG_BUNDLE_NAME                = 网易美术宝开发版
 
