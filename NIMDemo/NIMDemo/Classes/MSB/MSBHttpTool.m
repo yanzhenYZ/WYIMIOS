@@ -21,8 +21,9 @@
  第一个开发环境，第二个测试环境，第三个预发环境，最后两个生产环境
  */
 
-
+//配置对应环境
 static NSString *const MSB = @"http://1v1k8s.meishubao.com/vip-app-default/api/backend/api/login/";
+static NSString *const MSBIM = @"https://smbimtest.meishubao.com/im/getRegisterYxUserInfo";
 
 @implementation MSBHttpTool
 
@@ -68,7 +69,7 @@ static NSString *const MSB = @"http://1v1k8s.meishubao.com/vip-app-default/api/b
     };
 #endif
     NSLog(@"getInfo:%@", params);
-    [manager GET:@"https://smbimtest.meishubao.com/im/getRegisterYxUserInfo" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:MSBIM parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (completion) {
             completion(responseObject, nil);
         }

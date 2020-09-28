@@ -264,6 +264,8 @@
 		9B3039032521BC9300695411 /* LaunchScreenTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3039022521BC9300695411 /* LaunchScreenTea.storyboard */; };
 		9B3039072521C10F00695411 /* MSBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3039062521C10F00695411 /* MSBHttpTool.m */; };
 		9B30390E2521D3A100695411 /* MSBUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30390D2521D3A100695411 /* MSBUserInfoModel.m */; };
+		9B3A13E72521EF3C00C5E49A /* MSBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A13E52521EF3C00C5E49A /* MSBLoginViewController.m */; };
+		9B3A13E82521EF3C00C5E49A /* MSBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B3A13E62521EF3C00C5E49A /* MSBLoginViewController.xib */; };
 		A104323720DA42000079CE28 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A104323620DA42000079CE28 /* NotificationService.m */; };
 		A104323B20DA42000079CE28 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A104323320DA42000079CE28 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10C5DD020DBA9F700023EDD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10C5DCF20DBA9F700023EDD /* MainInterface.storyboard */; };
@@ -862,6 +864,9 @@
 		9B3039062521C10F00695411 /* MSBHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBHttpTool.m; sourceTree = "<group>"; };
 		9B30390C2521D3A100695411 /* MSBUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBUserInfoModel.h; sourceTree = "<group>"; };
 		9B30390D2521D3A100695411 /* MSBUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBUserInfoModel.m; sourceTree = "<group>"; };
+		9B3A13E42521EF3C00C5E49A /* MSBLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBLoginViewController.h; sourceTree = "<group>"; };
+		9B3A13E52521EF3C00C5E49A /* MSBLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBLoginViewController.m; sourceTree = "<group>"; };
+		9B3A13E62521EF3C00C5E49A /* MSBLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSBLoginViewController.xib; sourceTree = "<group>"; };
 		A104323320DA42000079CE28 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104323520DA42000079CE28 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		A104323620DA42000079CE28 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -2203,6 +2208,9 @@
 				9B3039062521C10F00695411 /* MSBHttpTool.m */,
 				9B30390C2521D3A100695411 /* MSBUserInfoModel.h */,
 				9B30390D2521D3A100695411 /* MSBUserInfoModel.m */,
+				9B3A13E42521EF3C00C5E49A /* MSBLoginViewController.h */,
+				9B3A13E52521EF3C00C5E49A /* MSBLoginViewController.m */,
+				9B3A13E62521EF3C00C5E49A /* MSBLoginViewController.xib */,
 			);
 			path = MSB;
 			sourceTree = "<group>";
@@ -2578,6 +2586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A4C4F41EC31F9400436955 /* icon_meeting_connecting@2x.gif in Resources */,
+				9B3A13E82521EF3C00C5E49A /* MSBLoginViewController.xib in Resources */,
 				8368EA641F271CA300C63840 /* README.txt in Resources */,
 				41E71057237D39860079EA97 /* NIMKitEmoticon.bundle in Resources */,
 				870E7ED12387CEFA0046C62C /* NIMLanguage.bundle in Resources */,
@@ -2944,6 +2953,7 @@
 				879C572D228443FB00F09955 /* NSString+NTES.m in Sources */,
 				E49D53C11B451C7400A869AC /* NSData+NTES.m in Sources */,
 				61EEE7761C22964500022315 /* NTESLiveMasterInfoView.m in Sources */,
+				9B3A13E72521EF3C00C5E49A /* MSBLoginViewController.m in Sources */,
 				839E2BC520591DF800EB1AA7 /* NTESTeamReceiptSendViewController.m in Sources */,
 				87E9754923A9CAFF00336165 /* NTESMessageRetrieveResultVC.m in Sources */,
 				61EEE7731C22917400022315 /* NTESChatroomMemberListViewController.m in Sources */,

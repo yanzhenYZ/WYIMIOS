@@ -33,6 +33,8 @@
 #import "NTESDbExceptionHandler.h"
 #import "NTESBundleSetting.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "MSBLoginViewController.h"
+#import "MSBHttpTool.h"
 
 @import PushKit;
 
@@ -246,7 +248,11 @@ NSString *NTESNotificationLogout = @"NTESNotificationLogout";
 - (void)setupLoginViewController
 {
     [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
+#if USEMSB
+    MSBLoginViewController *loginController = [[MSBLoginViewController alloc] init];
+#else
     NTESLoginViewController *loginController = [[NTESLoginViewController alloc] init];
+#endif
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
     self.window.rootViewController = nav;
 }
