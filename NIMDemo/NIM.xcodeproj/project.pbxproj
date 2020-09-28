@@ -263,6 +263,7 @@
 		907DBE851E5C777300317C36 /* NTESRecordSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 907DBE841E5C777300317C36 /* NTESRecordSelectView.m */; };
 		9B3039032521BC9300695411 /* LaunchScreenTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3039022521BC9300695411 /* LaunchScreenTea.storyboard */; };
 		9B3039072521C10F00695411 /* MSBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3039062521C10F00695411 /* MSBHttpTool.m */; };
+		9B30390E2521D3A100695411 /* MSBUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30390D2521D3A100695411 /* MSBUserInfoModel.m */; };
 		A104323720DA42000079CE28 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A104323620DA42000079CE28 /* NotificationService.m */; };
 		A104323B20DA42000079CE28 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A104323320DA42000079CE28 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10C5DD020DBA9F700023EDD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10C5DCF20DBA9F700023EDD /* MainInterface.storyboard */; };
@@ -859,6 +860,8 @@
 		9B3039022521BC9300695411 /* LaunchScreenTea.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenTea.storyboard; sourceTree = "<group>"; };
 		9B3039052521C10F00695411 /* MSBHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBHttpTool.h; sourceTree = "<group>"; };
 		9B3039062521C10F00695411 /* MSBHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBHttpTool.m; sourceTree = "<group>"; };
+		9B30390C2521D3A100695411 /* MSBUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBUserInfoModel.h; sourceTree = "<group>"; };
+		9B30390D2521D3A100695411 /* MSBUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBUserInfoModel.m; sourceTree = "<group>"; };
 		A104323320DA42000079CE28 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104323520DA42000079CE28 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		A104323620DA42000079CE28 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -2198,6 +2201,8 @@
 			children = (
 				9B3039052521C10F00695411 /* MSBHttpTool.h */,
 				9B3039062521C10F00695411 /* MSBHttpTool.m */,
+				9B30390C2521D3A100695411 /* MSBUserInfoModel.h */,
+				9B30390D2521D3A100695411 /* MSBUserInfoModel.m */,
 			);
 			path = MSB;
 			sourceTree = "<group>";
@@ -2831,6 +2836,7 @@
 				E6D3A80C22E833610051147E /* yuv444p10le.fsh.c in Sources */,
 				61C2CE521C489F0D00D76104 /* NTESChatroomManager.m in Sources */,
 				61E4713C1B7D963E00F4A1BF /* NTESSessionJankenponContentView.m in Sources */,
+				9B30390E2521D3A100695411 /* MSBUserInfoModel.m in Sources */,
 				61E471971B7D96AA00F4A1BF /* NTESPinyinConverter.m in Sources */,
 				2F02F300235DA7D700BE5597 /* NTESMessageModel.m in Sources */,
 				613A2FEA1C21016600508990 /* NTESChatroomSegmentedControl.m in Sources */,

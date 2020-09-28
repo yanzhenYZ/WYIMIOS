@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#define USEMSB 1
+
+#if USEMSB
+#define APPKEY @"d1ff2153e817bdac8e9a9351c29c107d"
+#else
+#define APPKEY @"45c6af3c98409b18a84451215d0bdd6e"
+#endif
 /**
  NTESLoginViewController - > onTouchLogin
  */

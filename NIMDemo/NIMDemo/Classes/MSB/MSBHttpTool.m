@@ -8,6 +8,7 @@
 
 #import "MSBHttpTool.h"
 #import <AFNetworking.h>
+#import "MSBUserInfoModel.h"
 
 /**
  http://1v1k8s.meishubao.com/vip-app-default/api/backend/api/login/
@@ -27,35 +28,49 @@ static NSString *const MSB = @"http://1v1k8s.meishubao.com/vip-app-default/api/b
 
 + (void)msbLogin:(NSString *)username identity:(NSString *)password completion:(void (^)(NSDictionary *obj, NSError *error))completion {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 10;
     NSDictionary *params = @{
         @"mobile" : username,
-        @"code" : password
+        @"password" : password
     };
-//    [manager POST:MSB parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        [MSBHttpTool getImInfo:@"1791474" identity:0 completion:completion];
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        if (completion) {
-//            completion(nil, error);
-//        }
-//    }];
-    
-    [MSBHttpTool getImInfo:@"1791474" identity:0 completion:^(NSDictionary *obj, NSError *error) {
-        if (error) {
-            NSLog(@"error: %@", error);
+    [manager POST:MSB parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        int code = [responseObject[@"code"] intValue];
+        if (code == 0 || code == 200) {
+            NSDictionary *user = responseObject[@"payload"][@"user"];
+            MSBUserInfoModel *model = [[MSBUserInfoModel alloc] init];
+            [model setValuesForKeysWithDictionary:user];
+            [self getImInfo:[NSString stringWithFormat:@"%ld", model._id] identity:0 completion:completion];
         } else {
-            NSLog(@"success: %@", obj);
+            if (completion) {
+                NSError *error = [NSError errorWithDomain:@"登录失败" code:code userInfo:@{}];
+                completion(nil, error);
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (completion) {
+            completion(nil, error);
         }
     }];
+    
+//    [MSBHttpTool getImInfo:@"1791474" identity:0 completion:^(NSDictionary *obj, NSError *error) {
+//        if (error) {
+//            NSLog(@"error: %@", error);
+//        } else {
+//            NSLog(@"success: %@", obj);
+//        }
+//    }];
     
 }
 
 + (void)getImInfo:(NSString *)userId identity:(int)identity completion:(void (^)(NSDictionary *obj, NSError *error))completion {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 10;
     NSDictionary *params = @{
         @"userId" : userId,
         @"identity" : @(identity)
     };
-    [manager POST:@"https://smbimtest.meishubao.com/im/getRegisterYxUserInfo" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSLog(@"getInfo:%@", params);
+    [manager GET:@"https://smbimtest.meishubao.com/im/getRegisterYxUserInfo" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (completion) {
             completion(responseObject, nil);
         }

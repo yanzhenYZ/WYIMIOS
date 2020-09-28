@@ -22,6 +22,7 @@
 #import "NTESRegisterViewController.h"
 #import "MSBHttpTool.h"
 
+
 @interface NTESLoginViewController ()<NTESRegisterViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -58,7 +59,7 @@ NTES_USE_CLEAR_BAR
     [pwdClearButton setImage:[UIImage imageNamed:@"login_icon_clear"] forState:UIControlStateNormal];
     UIButton *userNameClearButton = [self.usernameTextField valueForKey:@"_clearButton"];
     [userNameClearButton setImage:[UIImage imageNamed:@"login_icon_clear"] forState:UIControlStateNormal];
-    
+
     [_registerButton setHidden:![[NIMSDK sharedSDK] isUsingDemoAppKey]];
     
     self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -75,7 +76,12 @@ NTES_USE_CLEAR_BAR
 - (void)configNav{
     self.navigationItem.title = @"";
     UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+#if USEMSB
+    [loginBtn setTitle:@"登录".ntes_localized forState:UIControlStateNormal];
+#else
     [loginBtn setTitle:@"完成".ntes_localized forState:UIControlStateNormal];
+#endif
+    
     loginBtn.titleLabel.font = [UIFont systemFontOfSize:15.f];
     [loginBtn setTitleColor:UIColorFromRGB(0x2294ff) forState:UIControlStateNormal];
     
@@ -109,6 +115,7 @@ NTES_USE_CLEAR_BAR
     [SVProgressHUD show];
     
     [MSBHttpTool msbLogin:username identity:password completion:^(NSDictionary *obj, NSError *error) {
+        [SVProgressHUD dismiss];
         if (error) {
             NSLog(@"error: %@", error);
         } else {
@@ -203,7 +210,7 @@ NTES_USE_CLEAR_BAR
 }
 
 - (IBAction)onTouchLogin:(id)sender {
-#if 0
+#if USEMSB
     [self msbLogin];
 #else
     [self doLoginNIM];
