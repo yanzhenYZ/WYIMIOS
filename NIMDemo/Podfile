@@ -1,4 +1,11 @@
-platform :ios, '8.0'
+#pod 源
+source 'https://github.com/CocoaPods/Specs.git'
+#私有pod
+source 'http://gitlab.meishubao.com/ArtPods/ArtPodRepo.git'
+#aliyun
+source 'https://github.com/aliyun/aliyun-specs.git'
+
+platform :ios, '9.0'
 workspace 'NIM.xcworkspace'
 
 abstract_target 'NIMDemo' do
@@ -10,6 +17,14 @@ abstract_target 'NIMDemo' do
     pod 'YYImage'
     pod 'YYImage/WebP'
     pod 'AFNetworking'
+    pod 'Masonry', '~> 1.0.2'
+    pod 'ReactiveCocoa', '~> 2.5.2'
+    pod 'YYText', '~> 1.0.7'
+    
+    pod 'ArtLoginAndRegister', '0.0.3.3'
+    pod 'ArtFoundation' , '0.0.9.1'
+    pod 'ArtCommon', '1.0.13.11'
+    pod 'ArtLogger', '0.3.4.8'
 
 
     target 'NIM' do
