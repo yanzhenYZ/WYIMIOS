@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenStar" translatesAutoresizingMaskIntoConstraints="NO" id="uE1-hB-bP9">
+                                <rect key="frame" x="-7" y="64" width="428" height="626"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uE1-hB-bP9" secondAttribute="height" multiplier="367:537" id="odN-9d-BhM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenMountain" translatesAutoresizingMaskIntoConstraints="NO" id="eGs-RF-fu6">
+                                <rect key="frame" x="0.0" y="808" width="414" height="88"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenlogo" translatesAutoresizingMaskIntoConstraints="NO" id="kOY-Uk-acI">
+                                <rect key="frame" x="90.5" y="724" width="233" height="46"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uE1-hB-bP9" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="20" id="Att-cH-9Wh"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="kOY-Uk-acI" secondAttribute="bottom" constant="92" id="FlN-te-r7O"/>
+                            <constraint firstItem="uE1-hB-bP9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HBM-jJ-3Iy"/>
+                            <constraint firstItem="eGs-RF-fu6" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="PUe-zf-fIV"/>
+                            <constraint firstItem="kOY-Uk-acI" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="VAQ-E2-p8f"/>
+                            <constraint firstItem="eGs-RF-fu6" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="X4k-ZO-tNJ"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="uE1-hB-bP9" secondAttribute="bottom" constant="172" id="g5e-NG-dq2"/>
+                            <constraint firstAttribute="bottom" secondItem="eGs-RF-fu6" secondAttribute="bottom" id="jST-xc-Bp1"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="eGs-RF-fu6" secondAttribute="trailing" id="kt5-6x-HOO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.625" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchScreenMountain" width="375" height="88"/>
+        <image name="LaunchScreenStar" width="299" height="453"/>
+        <image name="LaunchScreenlogo" width="233" height="46"/>
+    </resources>
+</document>
