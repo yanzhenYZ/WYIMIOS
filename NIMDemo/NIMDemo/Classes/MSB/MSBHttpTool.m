@@ -39,7 +39,7 @@ static NSString *const MSB = @"http://1v1k8s.meishubao.com/vip-app-default/api/b
             NSDictionary *user = responseObject[@"payload"][@"user"];
             MSBUserInfoModel *model = [[MSBUserInfoModel alloc] init];
             [model setValuesForKeysWithDictionary:user];
-            [self getImInfo:[NSString stringWithFormat:@"%ld", model._id] identity:3 completion:completion];
+            [self getImInfo:[NSString stringWithFormat:@"%ld", model._id] identity:model.title completion:completion];
         } else {
             if (completion) {
                 NSError *error = [NSError errorWithDomain:@"登录失败" code:code userInfo:@{}];
@@ -51,28 +51,22 @@ static NSString *const MSB = @"http://1v1k8s.meishubao.com/vip-app-default/api/b
             completion(nil, error);
         }
     }];
-    
-//    [MSBHttpTool getImInfo:@"1791474" identity:0 completion:^(NSDictionary *obj, NSError *error) {
-//        if (error) {
-//            NSLog(@"error: %@", error);
-//        } else {
-//            NSLog(@"success: %@", obj);
-//        }
-//    }];
-    
 }
 
 + (void)getImInfo:(NSString *)userId identity:(int)identity completion:(void (^)(NSDictionary *obj, NSError *error))completion {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 10;
-//    NSDictionary *params = @{
-//        @"userId" : userId,
-//        @"identity" : @(identity)
-//    };
+#if 1
     NSDictionary *params = @{
-        @"userId" : @"1781194",
+        @"userId" : userId,
+        @"identity" : @(identity)
+    };
+#else
+    NSDictionary *params = @{
+        @"userId" : @"3625590",
         @"identity" : @(1)
     };
+#endif
     NSLog(@"getInfo:%@", params);
     [manager GET:@"https://smbimtest.meishubao.com/im/getRegisterYxUserInfo" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (completion) {

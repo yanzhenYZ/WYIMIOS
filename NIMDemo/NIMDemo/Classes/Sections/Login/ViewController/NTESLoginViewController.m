@@ -119,7 +119,15 @@ NTES_USE_CLEAR_BAR
         if (error) {
             [self.view makeToast:error.localizedDescription duration:2.0 position:CSToastPositionCenter];
         } else {
-            NSLog(@"success: %@", obj);
+            NSDictionary *payload = obj[@"payload"];
+            NSString *userId = payload[@"imId"];
+            NSString *token = payload[@"token"];
+            if (userId.length > 0 && token.length > 0) {
+                [self nimSDKLogin:userId token:token];
+            } else {
+                [self.view makeToast:@"用户不存在" duration:2.0 position:CSToastPositionCenter];
+            }
+            NSLog(@"success: %@", payload);
         }
     }];
 }
