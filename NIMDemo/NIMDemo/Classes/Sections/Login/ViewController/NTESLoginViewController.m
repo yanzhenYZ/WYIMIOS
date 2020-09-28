@@ -117,7 +117,7 @@ NTES_USE_CLEAR_BAR
     [MSBHttpTool msbLogin:username identity:password completion:^(NSDictionary *obj, NSError *error) {
         [SVProgressHUD dismiss];
         if (error) {
-            NSLog(@"error: %@", error);
+            [self.view makeToast:error.localizedDescription duration:2.0 position:CSToastPositionCenter];
         } else {
             NSLog(@"success: %@", obj);
         }
