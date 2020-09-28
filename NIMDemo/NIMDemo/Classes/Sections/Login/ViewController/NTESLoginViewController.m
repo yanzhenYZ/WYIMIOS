@@ -20,6 +20,7 @@
 #import "UIActionSheet+NTESBlock.h"
 #import "NTESLogManager.h"
 #import "NTESRegisterViewController.h"
+#import "MSBHttpTool.h"
 
 @interface NTESLoginViewController ()<NTESRegisterViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
@@ -99,9 +100,48 @@ NTES_USE_CLEAR_BAR
                                                 animated:NO];
 }
 
+- (void)msbLogin {
+    [_usernameTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+    
+    NSString *username = [_usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = _passwordTextField.text;
+    [SVProgressHUD show];
+    
+    [MSBHttpTool msbLogin:username identity:password completion:^(NSDictionary *obj, NSError *error) {
+        if (error) {
+            NSLog(@"error: %@", error);
+        } else {
+            NSLog(@"success: %@", obj);
+        }
+    }];
+}
 
+- (void)nimSDKLogin:(NSString *)loginAccount token:(NSString *)loginToken {
+    [[[NIMSDK sharedSDK] loginManager] login:loginAccount
+                                       token:loginToken
+                                  completion:^(NSError *error) {
+                                      [SVProgressHUD dismiss];
+                                      if (error == nil)
+                                      {
+                                          NTESLoginData *sdkData = [[NTESLoginData alloc] init];
+                                          sdkData.account   = loginAccount;
+                                          sdkData.token     = loginToken;
+                                          [[NTESLoginManager sharedManager] setCurrentLoginData:sdkData];
+                                          
+                                          [[NTESServiceManager sharedManager] start];
+                                          NTESMainTabController * mainTab = [[NTESMainTabController alloc] initWithNibName:nil bundle:nil];
+                                          [UIApplication sharedApplication].keyWindow.rootViewController = mainTab;
+                                      }
+                                      else
+                                      {
+                                          NSString *toast = [NSString stringWithFormat:@"%@ code: %zd",@"登录失败".ntes_localized, error.code];
+                                          [self.view makeToast:toast duration:2.0 position:CSToastPositionCenter];
+                                      }
+                                  }];
+}
 
-- (void)doLogin
+- (void)doLoginNIM
 {
     [_usernameTextField resignFirstResponder];
     [_passwordTextField resignFirstResponder];
@@ -163,7 +203,11 @@ NTES_USE_CLEAR_BAR
 }
 
 - (IBAction)onTouchLogin:(id)sender {
-    [self doLogin];
+#if 0
+    [self msbLogin];
+#else
+    [self doLoginNIM];
+#endif
 }
 
 - (void)prepareShowLog:(UILongPressGestureRecognizer *)gesuture{
@@ -217,7 +261,7 @@ NTES_USE_CLEAR_BAR
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if ([string isEqualToString:@"\n"]) {
-        [self doLogin];
+        [self onTouchLogin:self];
         return NO;
     }
     return YES;

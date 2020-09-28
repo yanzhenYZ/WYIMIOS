@@ -5,8 +5,8 @@
   Created by He on 2020/2/11.
   Copyright © 2020 Netease. All rights reserved.
 */
-CFBundleName="Meishubao Demo";
-CFBundleDisplayName="Meishubao Demo";
+CFBundleName="Meishubao";
+CFBundleDisplayName="Meishubao";
 NSCameraUsageDescription="Meishubao wants to use your camera";
 NSLocationWhenInUseUsageDescription="Meishubao wants to use your location";
 NSMicrophoneUsageDescription="Meishubao wants to use your microphone";

@@ -262,6 +262,7 @@
 		87F939A123F2BBD900760C24 /* NTESSystemNotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87F939A323F2BBD900760C24 /* NTESSystemNotificationCell.xib */; };
 		907DBE851E5C777300317C36 /* NTESRecordSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 907DBE841E5C777300317C36 /* NTESRecordSelectView.m */; };
 		9B3039032521BC9300695411 /* LaunchScreenTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3039022521BC9300695411 /* LaunchScreenTea.storyboard */; };
+		9B3039072521C10F00695411 /* MSBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3039062521C10F00695411 /* MSBHttpTool.m */; };
 		A104323720DA42000079CE28 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = A104323620DA42000079CE28 /* NotificationService.m */; };
 		A104323B20DA42000079CE28 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A104323320DA42000079CE28 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10C5DD020DBA9F700023EDD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10C5DCF20DBA9F700023EDD /* MainInterface.storyboard */; };
@@ -856,6 +857,8 @@
 		90FECD65215F551D001CD9C7 /* NVS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVS.framework; path = ../../../../NIMAVChat/NIMAVChat/Vendors/Libs/NVS.framework; sourceTree = "<group>"; };
 		918E4B82BC729110FDAC8DDC /* NMC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMC.framework; path = ./NIMDemo/Vendors/NIMAVChat/NMC.framework; sourceTree = SOURCE_ROOT; };
 		9B3039022521BC9300695411 /* LaunchScreenTea.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreenTea.storyboard; sourceTree = "<group>"; };
+		9B3039052521C10F00695411 /* MSBHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSBHttpTool.h; sourceTree = "<group>"; };
+		9B3039062521C10F00695411 /* MSBHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSBHttpTool.m; sourceTree = "<group>"; };
 		A104323320DA42000079CE28 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A104323520DA42000079CE28 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		A104323620DA42000079CE28 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -1909,6 +1912,7 @@
 		61F728281A7B23A40076C096 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9B3039042521C0EF00695411 /* MSB */,
 				87EA9E5721DCD36500EF0EAE /* Private */,
 				E48988E51DE42353001CF6C5 /* LayoutConfig */,
 				61E471681B7D96AA00F4A1BF /* Util */,
@@ -2187,6 +2191,15 @@
 				87EA9E5821DCD37700EF0EAE /* NTESPrivatizationManager.m */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		9B3039042521C0EF00695411 /* MSB */ = {
+			isa = PBXGroup;
+			children = (
+				9B3039052521C10F00695411 /* MSBHttpTool.h */,
+				9B3039062521C10F00695411 /* MSBHttpTool.m */,
+			);
+			path = MSB;
 			sourceTree = "<group>";
 		};
 		A104323420DA42000079CE28 /* NotificationService */ = {
@@ -2887,6 +2900,7 @@
 				48E39B1A2446B8E800F2BA20 /* NTESCollectMessageListViewController.m in Sources */,
 				E6D3A80D22E833610051147E /* yuv420p.fsh.c in Sources */,
 				6118AEDE2059712B000E2B94 /* NTESTeamReceiptDetailViewController.m in Sources */,
+				9B3039072521C10F00695411 /* MSBHttpTool.m in Sources */,
 				61EAD9181B833C4E005DC715 /* NTESBlackListViewController.m in Sources */,
 				612FA9551C1EC202008956C9 /* NTESChatroomMessageDataProvider.m in Sources */,
 				834DC5C91F1C9F2A00C9E0B3 /* NTESSnapchatAttachment.m in Sources */,
