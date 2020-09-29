@@ -18,14 +18,21 @@
 - (void)viewDidLoad {
    [super viewDidLoad];
     self.navigationItem.title = @"关于".ntes_localized;
-    NSString *version = [NIMSDK sharedSDK].sdkVersion;
-    self.versionLabel.text = [NSString stringWithFormat:@"%@：%@",@"版本号".ntes_localized, version];
+//    NSString *version = [NIMSDK sharedSDK].sdkVersion;
+//    self.versionLabel.text = [NSString stringWithFormat:@"%@：%@",@"版本号".ntes_localized, version];
+    
+    
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    self.versionLabel.text = [NSString stringWithFormat:@"%@：%@",@"版本号".ntes_localized, app_Version];
     
     [self loadServerTime];
 }
 
 
 - (void)loadServerTime {
+    self.serverTimeLabel.hidden = YES;
+    return;
     __weak typeof(self) weakSelf = self;
     [[NIMSDK sharedSDK].loginManager queryServerTimeCompletion:^(NSError * _Nullable error, NIMServerTime * _Nonnull time) {
         if (error) {

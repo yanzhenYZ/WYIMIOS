@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MSBLoginViewController">
             <connections>
+                <outlet property="loginBtn" destination="rz2-50-vzt" id="bDG-Kg-kOR"/>
+                <outlet property="mobileView" destination="098-OT-f6C" id="TeI-Bm-FQ2"/>
+                <outlet property="passwordView" destination="XSW-gn-uB0" id="1WD-hP-6Ae"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +22,76 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlX-qS-RVo">
-                    <rect key="frame" x="156" y="503" width="49" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </switch>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="art_lr_stu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nEF-g1-TKB">
+                    <rect key="frame" x="127" y="120" width="160" height="45"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBn-1y-ITm">
+                    <rect key="frame" x="20" y="229" width="374" height="200"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="098-OT-f6C">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="art_lr_code" translatesAutoresizingMaskIntoConstraints="NO" id="kl9-JM-YQY">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="50"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="2RA-vl-Nwp"/>
+                                <constraint firstItem="kl9-JM-YQY" firstAttribute="leading" secondItem="098-OT-f6C" secondAttribute="leading" id="6tC-HE-QDQ"/>
+                                <constraint firstItem="kl9-JM-YQY" firstAttribute="top" secondItem="098-OT-f6C" secondAttribute="top" id="Opn-Ga-ZXr"/>
+                                <constraint firstAttribute="bottom" secondItem="kl9-JM-YQY" secondAttribute="bottom" id="Zg2-ft-Dzd"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSW-gn-uB0">
+                            <rect key="frame" x="0.0" y="65" width="374" height="51"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz2-50-vzt">
+                            <rect key="frame" x="0.0" y="146" width="374" height="50"/>
+                            <color key="backgroundColor" red="0.9882352941176471" green="0.20392156862745098" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="gSU-hS-tfg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="登录">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="login:" destination="-1" eventType="touchUpInside" id="rsS-r5-mgM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="rz2-50-vzt" firstAttribute="trailing" secondItem="XSW-gn-uB0" secondAttribute="trailing" id="EvB-xz-cX4"/>
+                        <constraint firstItem="098-OT-f6C" firstAttribute="top" secondItem="nBn-1y-ITm" secondAttribute="top" id="LTG-Lv-0mr"/>
+                        <constraint firstItem="rz2-50-vzt" firstAttribute="leading" secondItem="XSW-gn-uB0" secondAttribute="leading" id="bt5-kj-QrJ"/>
+                        <constraint firstItem="XSW-gn-uB0" firstAttribute="height" secondItem="098-OT-f6C" secondAttribute="height" multiplier="1.02" id="fU1-hj-Z1L"/>
+                        <constraint firstItem="XSW-gn-uB0" firstAttribute="trailing" secondItem="098-OT-f6C" secondAttribute="trailing" id="gOO-Jc-YQd"/>
+                        <constraint firstItem="XSW-gn-uB0" firstAttribute="top" secondItem="098-OT-f6C" secondAttribute="bottom" constant="15" id="mrK-nq-rsc"/>
+                        <constraint firstAttribute="trailing" secondItem="098-OT-f6C" secondAttribute="trailing" id="pvg-0x-46W"/>
+                        <constraint firstItem="rz2-50-vzt" firstAttribute="top" secondItem="XSW-gn-uB0" secondAttribute="bottom" constant="30" id="rhy-Ky-2Ub"/>
+                        <constraint firstAttribute="height" constant="200" id="uFk-hq-g0I"/>
+                        <constraint firstItem="098-OT-f6C" firstAttribute="leading" secondItem="nBn-1y-ITm" secondAttribute="leading" id="uRt-h5-LqI"/>
+                        <constraint firstItem="XSW-gn-uB0" firstAttribute="leading" secondItem="098-OT-f6C" secondAttribute="leading" id="xgE-HE-jSs"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="69"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nEF-g1-TKB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1gP-X1-76T"/>
+                <constraint firstItem="nBn-1y-ITm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="3f5-ca-HCC"/>
+                <constraint firstItem="nBn-1y-ITm" firstAttribute="top" secondItem="nEF-g1-TKB" secondAttribute="bottom" constant="64" id="5PP-1D-ZAX"/>
+                <constraint firstItem="nEF-g1-TKB" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="76" id="6un-gg-3tC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="nBn-1y-ITm" secondAttribute="trailing" constant="20" id="wXD-sA-iPI"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="68.973214285714278"/>
         </view>
     </objects>
     <resources>
+        <image name="art_lr_code" width="24" height="24"/>
+        <image name="art_lr_stu_logo" width="160" height="45"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

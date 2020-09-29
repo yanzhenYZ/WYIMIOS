@@ -3519,6 +3519,7 @@
 					"$(PROJECT_DIR)/NIMDemo/Classes/Vendors/WXChatSDK/SPaySDK",
 					"$(PROJECT_DIR)/NIMDemo/Classes/Vendors/WXChatSDK/WXSDK",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -3586,6 +3587,7 @@
 					"$(PROJECT_DIR)/NIMDemo/Classes/Vendors/WXChatSDK/SPaySDK",
 					"$(PROJECT_DIR)/NIMDemo/Classes/Vendors/WXChatSDK/WXSDK",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

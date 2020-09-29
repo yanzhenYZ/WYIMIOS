@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,11 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" image="icon_about_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jiQ-b8-dUp">
-                    <rect key="frame" x="157.5" y="194.5" width="60" height="60"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" image="art_lr_stu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="jiQ-b8-dUp">
+                    <rect key="frame" x="107.5" y="194.5" width="160" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="YJc-ny-RPf"/>
-                        <constraint firstAttribute="width" constant="60" id="cz5-fX-liG"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright ©1997-2020 网易公司版权所有" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-VD-MPb" userLabel="Copyright ©1997-2020 网易公司版权所有">
@@ -34,19 +33,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版本号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMg-rq-rMH">
-                    <rect key="frame" x="170.5" y="264.5" width="34" height="13.5"/>
+                    <rect key="frame" x="170.5" y="274.5" width="34" height="13.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.74901960784313726" green="0.76078431372549016" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rI-bK-Rva">
-                    <rect key="frame" x="185.5" y="317" width="125.5" height="0.0"/>
+                    <rect key="frame" x="185.5" y="327" width="125.5" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.74901960779999999" green="0.76078431369999999" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务端时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-ZR-U3u">
-                    <rect key="frame" x="118" y="310" width="67.5" height="14"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务端时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWh-ZR-U3u">
+                    <rect key="frame" x="118" y="320" width="67.5" height="14"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.74901960779999999" green="0.76078431369999999" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -65,12 +64,12 @@
                 <constraint firstAttribute="centerX" secondItem="DMg-rq-rMH" secondAttribute="centerX" id="iwN-jX-jKY"/>
                 <constraint firstItem="fWh-ZR-U3u" firstAttribute="top" secondItem="DMg-rq-rMH" secondAttribute="bottom" constant="32" id="kcv-1M-qsD"/>
                 <constraint firstItem="fWh-ZR-U3u" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-36" id="lF6-J5-fRL"/>
-                <constraint firstItem="DMg-rq-rMH" firstAttribute="top" secondItem="jiQ-b8-dUp" secondAttribute="bottom" constant="10" id="yR0-zJ-h8N"/>
+                <constraint firstItem="DMg-rq-rMH" firstAttribute="top" secondItem="jiQ-b8-dUp" secondAttribute="bottom" constant="20" id="yR0-zJ-h8N"/>
             </constraints>
             <point key="canvasLocation" x="319.19999999999999" y="290.10494752623691"/>
         </view>
     </objects>
     <resources>
-        <image name="icon_about_logo" width="60" height="60"/>
+        <image name="art_lr_stu_logo" width="160" height="45"/>
     </resources>
 </document>

@@ -32,6 +32,7 @@
 #import "NTESMigrateMessageViewController.h"
 #import "NTESCollectMessageListViewController.h"
 #import <NIMSDK/NIMSDK.h>
+#import "MSBHttpTool.h"
 
 @interface NTESSettingViewController ()<NIMUserManagerDelegate>
 
@@ -91,6 +92,86 @@
 }
 
 - (void)buildData{
+    
+#if USEMSB
+    [self MSBBuildData];
+#else
+    [self NIMBuildData];
+#endif
+    
+    
+}
+
+- (void)MSBBuildData {
+    NSString *uid = [[NIMSDK sharedSDK].loginManager currentAccount];
+    NSArray *data = @[
+                      @{
+                          HeaderTitle:@"",
+                          RowContent :@[
+                                        @{
+                                            ExtraInfo     : uid.length ? uid : [NSNull null],
+                                            CellClass     : @"NTESSettingPortraitCell",
+                                            RowHeight     : @(100),
+                                            CellAction    : @"onActionTouchPortrait:",
+                                            ShowAccessory : @(YES)
+                                         },
+                                       ],
+                          FooterTitle:@""
+                       },
+//                       @{
+//                          HeaderTitle:@"",
+//                          RowContent :@[
+//                                       @{
+//                                          Title      :@"免打扰".ntes_localized,
+//                                          DetailTitle:enableNoDisturbing ? [NSString stringWithFormat:@"%@%@%@",noDisturbingStart,@"到".ntes_localized,noDisturbingEnd] : @"未开启".ntes_localized,
+//                                          CellAction :@"onActionNoDisturbingSetting:",
+//                                          ShowAccessory : @(YES)
+//                                        },
+//                                  ],
+//                          FooterTitle:@""
+//                        },
+                       @{
+                          HeaderTitle:@"",
+                          RowContent :@[
+//                                        @{
+//                                          Title      :@"查看日志".ntes_localized,
+//                                          CellAction :@"onTouchShowLog:",
+//                                          },
+//                                        @{
+//                                            Title      :@"上传日志".ntes_localized,
+//                                            CellAction :@"onTouchUploadLog:",
+//                                            },
+                                        @{
+                                            Title      :@"清理缓存".ntes_localized,
+                                            CellAction :@"onTouchCleanCache:",
+                                            ShowAccessory : @(YES)
+                                            },
+                                        @{
+                                            Title      :@"关于".ntes_localized,
+                                            CellAction :@"onTouchAbout:",
+                                            ShowAccessory : @(YES)
+                                          },
+                                      ],
+                          FooterTitle:@""
+                        },
+                      @{
+                          HeaderTitle:@"",
+                          RowContent :@[
+                                          @{
+                                              Title        : @"注销".ntes_localized,
+                                              CellClass    : @"NTESColorButtonCell",
+                                              CellAction   : @"logoutCurrentAccount:",
+                                              ExtraInfo    : @(ColorButtonCellStyleRed),
+//                                              ForbidSelect : @(YES)
+                                            },
+                                       ],
+                          FooterTitle:@"",
+                          },
+                    ];
+    self.data = [NIMCommonTableSection sectionsWithData:data];
+}
+
+- (void)NIMBuildData {
     BOOL disableRemoteNotification = [UIApplication sharedApplication].currentUserNotificationSettings.types == UIUserNotificationTypeNone;
     
     NIMPushNotificationSetting *setting = [[NIMSDK sharedSDK].apnsManager currentSetting];
@@ -100,7 +181,6 @@
     
     NSInteger customNotifyCount = [[NTESCustomNotificationDB sharedInstance] unreadCount];
     NSString *customNotifyText  = [NSString stringWithFormat:@"%@ (%zd)",@"自定义系统通知".ntes_localized,customNotifyCount];
-
     NSString *uid = [[NIMSDK sharedSDK].loginManager currentAccount];
     NSArray *data = @[
                       @{
@@ -218,6 +298,7 @@
                     ];
     self.data = [NIMCommonTableSection sectionsWithData:data];
 }
+
 
 - (void)refreshData{
     [self buildData];
@@ -379,20 +460,31 @@
 }
 
 - (void)logoutCurrentAccount:(id)sender{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"退出当前帐号？".ntes_localized message:nil delegate:nil cancelButtonTitle:@"取消".ntes_localized otherButtonTitles:@"确定".ntes_localized, nil];
-    [alert showAlertWithCompletionHandler:^(NSInteger alertIndex) {
-        switch (alertIndex) {
-            case 1:
-                [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error)
-                 {
-                     extern NSString *NTESNotificationLogout;
-                     [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
-                 }];
-                break;
-            default:
-                break;
-        }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"退出当前帐号？".ntes_localized message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消".ntes_localized style:UIAlertActionStyleCancel handler:nil]];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定".ntes_localized style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error)
+         {
+             extern NSString *NTESNotificationLogout;
+             [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
+         }];
     }];
+    [alert addAction:sureAction];
+    [self presentViewController:alert animated:YES completion:nil];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"退出当前帐号？".ntes_localized message:nil delegate:nil cancelButtonTitle:@"取消".ntes_localized otherButtonTitles:@"确定".ntes_localized, nil];
+//    [alert showAlertWithCompletionHandler:^(NSInteger alertIndex) {
+//        switch (alertIndex) {
+//            case 1:
+//                [[[NIMSDK sharedSDK] loginManager] logout:^(NSError *error)
+//                 {
+//                     extern NSString *NTESNotificationLogout;
+//                     [[NSNotificationCenter defaultCenter] postNotificationName:NTESNotificationLogout object:nil];
+//                 }];
+//                break;
+//            default:
+//                break;
+//        }
+//    }];
 }
 
 - (void)onTouchMigrateMessages:(id)sender {
